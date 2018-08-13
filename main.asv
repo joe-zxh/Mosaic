@@ -1,0 +1,25 @@
+clc;clear;
+
+
+%cut the mergePic
+
+mergePicPath = './mergePic/mergePic.jpg'
+longDirect = 4;
+shortDi = 3; %4:3的图片
+
+picNum = 1500 %理想的输入图片的个数 1500张
+lenDirect = round(1500*)
+
+ratio = longDirect/width; 
+mergePic = cutMergePic(mergePicPath, ratio);
+
+imwrite(mergePic,'mergePic.jpg');
+
+imshow(mergePic)
+
+
+
+
+
+
+
