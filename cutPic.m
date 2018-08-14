@@ -1,3 +1,5 @@
+% ≤√ºÙ ‰»Îµƒ–°Õº
+
 function [ A ] = cutPic( mergePath , ratio)
 
 A = imread(mergePath);

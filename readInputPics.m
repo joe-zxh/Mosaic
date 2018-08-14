@@ -1,4 +1,6 @@
-function [ ret ] = readInputPics( imgsInputpath)
+%读取输入的所有小图
+
+function [ ret ] = readInputPics( imgsInputpath, ratio)
 
 fileFolder=fullfile(imgsInputpath);
 dirOutput=dir(fullfile(fileFolder,'*'));%如果存在不同类型的文件，用‘*’读取所有，如果读取特定类型文件，'.'加上文件类型，例如用‘.jpg’
@@ -7,7 +9,7 @@ fileNames={dirOutput.name}';
 ret = {};
 for i = 3:size(fileNames, 1)
     imgpath = sprintf('%s/%s', imgsInputpath,fileNames{i});    
-    img = cutPic(imgpath, 4/3);
+    img = cutPic(imgpath, ratio);
     
     R = img(:,:,1);
     G = img(:,:,2);

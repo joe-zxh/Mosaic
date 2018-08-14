@@ -1,3 +1,5 @@
+%对大图的某个chunk，寻找一个RGB最适合的小图，并做一些修改，让他们的RGB平均值相等。
+
 function [ matchSplit, picsCellTemp ] = findMatchSplit(mergePicSplit, picsCellTemp, picsCell)
 
 R = mergePicSplit(:,:,1);
@@ -14,7 +16,7 @@ if (size(picsCellTemp,2)>0) % 还有图片 没用完
     i = 1;    
     for i = 1:size(picsCellTemp, 2)
         distTemp = Distance(mergePicSplitAvg, picsCellTemp{1, i});
-        if (distTemp<0)            
+        if (distTemp<10)            
             matchSplit = picsCellTemp{1, i};
             break
         elseif(distTemp<distMin)
@@ -66,13 +68,6 @@ function [matchSplit] = Transform(mergePicSplitAvg, cellSplit)
     cellSplit{1}(:,:,1) = cellSplit{1}(:,:,1)+dR; 
     cellSplit{1}(:,:,2) = cellSplit{1}(:,:,2)+dG; 
     cellSplit{1}(:,:,3) = cellSplit{1}(:,:,3)+dB; 
-    
-    R = cellSplit{1}(:,:,1);
-    G = cellSplit{1}(:,:,2);
-    B = cellSplit{1}(:,:,3);
-
-    Avg = [mean(R(:)), mean(G(:)), mean(B(:))];
-    
     
     matchSplit = cellSplit{1}; 
 end
