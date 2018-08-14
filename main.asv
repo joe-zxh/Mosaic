@@ -1,25 +1,42 @@
 clc;clear;
-
-
 %cut the mergePic
 
-mergePicPath = './mergePic/mergePic.jpg'
-longDirect = 4;
-shortDi = 3; %4:3的图片
+mergePicPath = './mergePic/mergePic.jpg';
+inputImgPath = './inputPics';
+longX = 4;
+shortX = 3; %4:3的图片
 
-picNum = 1500 %理想的输入图片的个数 1500张
-lenDirect = round(1500*)
+ratio = longX/shortX; 
+picNumBase = 35;
 
-ratio = longDirect/width; 
-mergePic = cutMergePic(mergePicPath, ratio);
+[ mergePic, chunkSize, picNumBase] = cutMergePic( mergePicPath , longX, shortX, picNumBase);
 
-imwrite(mergePic,'mergePic.jpg');
-
-imshow(mergePic)
+picNum = picNumBase^2; %输入图片的推荐张数
 
 
+%读取输入的图片，返回一个cell
+picsCellTemp = readInputPics(inputImgPath);
+picsCell = readInputPics(inputImgPath);
 
+% 拼接图片
 
+nx = size(mergePic,1)/chunkSize(1);
+ny = size(mergePic,2)/chunkSize(2);
 
+outputImgCell = cell(nx,ny); %
+
+for i=1:nx    
+    for j = 1:ny
+        
+        leftUp = [(i-1)*chunk];
+        
+        rightButton = ;
+        
+        mergePicSplit = ;
+        
+        
+    
+    end    
+end
 
 
