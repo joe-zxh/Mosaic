@@ -1,6 +1,6 @@
 clc;clear;
 %cut the mergePic
-
+tic
 mergePicPath = './mergePic/gakki.jpg';
 inputImgPath = './inputPics';
 longX = 4;
@@ -51,3 +51,4 @@ end
 imshow(outputImg);
 outimgpath = sprintf('outputImg%dÏñËØ.jpg', nx*ny);   
 imwrite(outputImg,outimgpath);
+toc

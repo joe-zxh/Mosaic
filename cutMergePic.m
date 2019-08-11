@@ -1,4 +1,4 @@
-% ²Ã¼ôÒªºÏ³ÉµÄÍ¼¡£
+% ï¿½Ã¼ï¿½Òªï¿½Ï³Éµï¿½Í¼ï¿½ï¿½
 
 function [ mergePic, chunkSize, picNumBase ] = cutMergePic( mergePicPath , longX, shortX, minPicsNum)
 
@@ -9,7 +9,7 @@ y = size(A,2);
 
 picNumBase = round(sqrt(minPicsNum));
 
-if (x<y) % Èç¹ûÒª±»ºÏ³ÉµÄÍ¼ÊÇºáÏòµÄ£¬ÄÇÃ´»áºÃ´¦ÀíÒ»µã£¬Ö±½Ó°ÑpicNumBaseÉèÎªround(sqrt(minPicsNum))
+if (x<y) % ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ï³Éµï¿½Í¼ï¿½Çºï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ã´ï¿½ï¿½Ã´ï¿½ï¿½ï¿½Ò»ï¿½ã£¬Ö±ï¿½Ó°ï¿½picNumBaseï¿½ï¿½Îªround(sqrt(minPicsNum))
     a = 1;
     m = a*picNumBase;
     
@@ -24,7 +24,7 @@ if (x<y) % Èç¹ûÒª±»ºÏ³ÉµÄÍ¼ÊÇºáÏòµÄ£¬ÄÇÃ´»áºÃ´¦ÀíÒ»µã£¬Ö±½Ó°ÑpicNumBaseÉèÎªround
     picSize=[shortX*m, longX*m];
         
     
-else % ±»ºÏ³ÉµÄÍ¼ÊÇ×ÝÏòµÄ£¬»áÄÑ´¦ÀíÒ»µã
+else % ï¿½ï¿½ï¿½Ï³Éµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
     
     picNumBase = longX*shortX;
     i = 1;
