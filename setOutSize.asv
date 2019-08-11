@@ -1,9 +1,0 @@
-function [outSize] = setOutSize(chunkSize, longX, shortX, longEdgeMin, shortEdgeMin)
-
-if (chunkSize(1)<shortEdgeMin)
-
-
-
-
-end
-
